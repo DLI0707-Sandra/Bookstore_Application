@@ -38,7 +38,12 @@ public class Users {
     @Column(name = "created_at")
     private LocalDateTime created_at;
 
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private Users users;
+    @OneToOne(mappedBy = "users")
+    private CustomerDetails customerDetails;
+
+    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
+    private Cart cart;
+
+    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
+    private Wishlist wishlist;
 }
