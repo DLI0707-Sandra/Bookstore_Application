@@ -52,6 +52,9 @@ public class Book {
     @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
     private CartItem cartItem;
 
+    @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
+    private WishlistItems wishlistItems;
+
     public Book(String name, String description, Double price, Integer stock, String author, String category, LocalDateTime created_at, LocalDateTime updated_at) {
         this.name = name;
         this.description = description;

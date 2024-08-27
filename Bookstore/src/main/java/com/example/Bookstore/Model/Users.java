@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name="users")
 
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "userId")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Users {
 
     @Id
@@ -38,4 +38,7 @@ public class Users {
     @Column(name = "created_at")
     private LocalDateTime created_at;
 
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private Users users;
 }

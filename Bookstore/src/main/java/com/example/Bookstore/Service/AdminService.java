@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface AdminService {
 
 
-    public List<Admin> getAllAdmins() ;
+     public List<Admin> getAllAdmins() ;
 
     public Optional<Admin> getAdminById(Long id) ;
 
