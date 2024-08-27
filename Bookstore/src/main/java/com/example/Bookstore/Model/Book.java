@@ -49,6 +49,9 @@ public class Book {
     @Column(name = "updated_at")
     private LocalDateTime updated_at;
 
+    @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
+    private CartItem cartItem;
+
     public Book(String name, String description, Double price, Integer stock, String author, String category, LocalDateTime created_at, LocalDateTime updated_at) {
         this.name = name;
         this.description = description;

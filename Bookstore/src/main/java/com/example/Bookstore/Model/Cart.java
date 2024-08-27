@@ -1,43 +1,35 @@
 package com.example.Bookstore.Model;
 
-
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name="users")
+@Table(name = "cart")
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class Users {
+public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long userId;
+    private Long id;
 
-    @NotNull
-    @Column(name="userName")
-    private String userName;
-
-    @Column(name="email")
-    private String email;
-
-    @NotNull
-    @Column(name="password")
-    private String password;
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private Users users;
 
     @Column(name = "created_at")
     private LocalDateTime created_at;
 
-    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
-    private Cart cart;
+    @OneToMany(mappedBy = "cart")
+    private List<CartItem> cartItems;
 }
