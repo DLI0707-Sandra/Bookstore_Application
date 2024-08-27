@@ -49,4 +49,14 @@ public class Book {
     @Column(name = "updated_at")
     private LocalDateTime updated_at;
 
+    public Book(String name, String description, Double price, Integer stock, String author, String category, LocalDateTime created_at, LocalDateTime updated_at) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.stock = stock;
+        this.author = author;
+        this.category = category;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+    }
 }

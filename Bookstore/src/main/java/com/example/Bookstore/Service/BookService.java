@@ -1,4 +1,9 @@
 package com.example.Bookstore.Service;
 
+import com.example.Bookstore.Model.Book;
+
+import java.util.List;
+
 public interface BookService {
+    List<Book> getAll();
 }
