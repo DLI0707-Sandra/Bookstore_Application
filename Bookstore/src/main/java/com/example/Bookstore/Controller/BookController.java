@@ -25,4 +25,17 @@ public class BookController {
     {
         return bookService.addBook(book);
     }
+
+    @PutMapping
+    public Book updateBook(Long product_id,Book book)
+    {
+        return bookService.updateBook(product_id,book);
+    }
+
+    @DeleteMapping
+    public String deleteBook(Long product_id)
+    {
+        return bookService.deleteBook(product_id);
+    }
+
 }

@@ -8,4 +8,8 @@ public interface BookService {
     List<Book> getAll();
 
     Book addBook(Book book);
+
+    Book updateBook(Long productId, Book book);
+
+    String deleteBook(Long productId);
 }
