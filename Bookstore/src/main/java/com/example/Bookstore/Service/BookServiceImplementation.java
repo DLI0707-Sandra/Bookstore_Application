@@ -17,4 +17,9 @@ public class BookServiceImplementation implements BookService{
     public List<Book> getAll() {
         return bookRepository.findAll();
     }
+
+    @Override
+    public Book addBook(Book book) {
+        return bookRepository.save(book);
+    }
 }
