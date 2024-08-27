@@ -22,6 +22,6 @@ public interface AdminService {
 
     public void deleteAdmin(Long id) ;
 
-    public Admin loginAdmin(AdminLoginDTO admin) ;
+    public String loginAdmin(AdminLoginDTO admin) ;
 
 }
