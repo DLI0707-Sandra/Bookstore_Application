@@ -6,6 +6,7 @@ import com.example.Bookstore.Repository.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -15,7 +16,13 @@ public class UsersServiceImplementation implements UsersService{
 
     @Override
     public String registration(Users users) {
-        usersRepo.save(users);
+      Users newUSer=new Users();
+      newUSer.setUserId(users.getUserId());
+      newUSer.setUserName(users.getUserName());
+      newUSer.setEmail(users.getEmail());
+      newUSer.setPassword(users.getPassword());
+     newUSer.setCreated_at(LocalDateTime.now());
+    usersRepo.save(newUSer);
         return "User added";
     }
 
