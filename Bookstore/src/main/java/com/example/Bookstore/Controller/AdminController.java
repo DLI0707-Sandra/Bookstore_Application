@@ -5,6 +5,7 @@ import com.example.Bookstore.Model.Book;
 import com.example.Bookstore.Service.AdminService;
 import com.example.Bookstore.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,12 +33,14 @@ public class AdminController {
 
     @PostMapping("/delete/book/{product_id}")
     public String deleteBook(@PathVariable Long product_id) {
+
         return bookService.deleteBook(product_id);
     }
 
 
     @PostMapping("/registration")
     public Admin createAdmin(@RequestBody Admin admin) {
+
         return adminService.createAdmin(admin);
     }
 
@@ -45,7 +48,6 @@ public class AdminController {
     public String createAdmin(@RequestBody AdminLoginDTO admin) {
         return adminService.loginAdmin(admin);
     }
-
-
-
 }
+
+
