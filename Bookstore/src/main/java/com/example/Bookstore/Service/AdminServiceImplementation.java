@@ -39,12 +39,12 @@ public class AdminServiceImplementation implements AdminService {
         adminRepository.deleteById(id);
     }
 
-    public Admin loginAdmin(AdminLoginDTO admin) {
+    public String loginAdmin(AdminLoginDTO admin) {
         Admin admin1 = adminRepository.findByUsername(admin.getUsername()).orElseThrow(() -> new RuntimeException("Admin not found"));
         if (admin1.getPassword().equals(admin.getPassword())) {
-            return admin1;
+            return "Login successful";
         } else {
-            throw new RuntimeException("Invalid password");
+            return "Invalid password";
         }
 
     }

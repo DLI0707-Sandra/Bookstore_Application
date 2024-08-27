@@ -42,7 +42,7 @@ public class AdminController {
     }
 
     @PostMapping("/login")
-    public Admin createAdmin(@RequestBody AdminLoginDTO admin) {
+    public String createAdmin(@RequestBody AdminLoginDTO admin) {
         return adminService.loginAdmin(admin);
     }
 
