@@ -49,8 +49,11 @@ public class Book {
     @Column(name = "updated_at")
     private LocalDateTime updated_at;
 
-//    @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
-//    private CartItem cartItem;
+    @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
+    private CartItem cartItem;
+
+    @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
+    private OrderItem orderItem;
 
     @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
     private WishlistItems wishlistItems;
