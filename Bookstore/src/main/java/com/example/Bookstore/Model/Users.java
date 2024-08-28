@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name="users")
 
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "userId")
 public class Users {
 
     @Id
@@ -41,8 +41,8 @@ public class Users {
     @OneToOne(mappedBy = "users")
     private CustomerDetails customerDetails;
 
-    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
-    private Cart cart;
+//    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
+//    private Cart cart;
 
     @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
     private Wishlist wishlist;
