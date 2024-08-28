@@ -45,12 +45,16 @@ public class CartItemServiceImplementation implements CartItemService{
                 cart1.setUsers(cart.getUsers());
                 cart1.setCreated_at(LocalDateTime.now());
                 List<CartItem> items=new ArrayList<>();
+                cart1.setCartItems(items);
                 cartRepository.save(cart1);
                 CartItem cartItem=new CartItem();
                 cartItem.setBook(book);
                 cartItem.setQuantity(1);
                 cartItem.setCart(cart1);
                 cartItemRepository.save(cartItem);
+                items.add(cartItem);
+                cart1.setCartItems(items);
+                cartRepository.save(cart1);
 
             }
 

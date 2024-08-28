@@ -1,5 +1,7 @@
 package com.example.Bookstore.Model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name="orders")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
