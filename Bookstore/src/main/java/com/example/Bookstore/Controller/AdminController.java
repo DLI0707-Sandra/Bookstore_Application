@@ -6,6 +6,7 @@ import com.example.Bookstore.Service.AdminService;
 import com.example.Bookstore.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,7 @@ public class AdminController {
     private BookService bookService;
 
 
-    @PostMapping("/add/book")
+    @PostMapping(value = "/add/book")
     public Book addBook(@RequestBody Book book) {
         return bookService.addBook(book);
     }

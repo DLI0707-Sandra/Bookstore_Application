@@ -41,8 +41,8 @@ public class Users {
     @OneToOne(mappedBy = "users")
     private CustomerDetails customerDetails;
 
-    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
-    private Cart cart;
+//    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
+//    private Cart cart;
 
     @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
     private Wishlist wishlist;
