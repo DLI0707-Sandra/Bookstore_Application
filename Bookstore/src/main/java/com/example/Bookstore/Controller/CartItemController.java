@@ -22,7 +22,10 @@ public class CartItemController {
     @PostMapping("/add_cart_item/{product_id}")
     public String addCartItem(@PathVariable("product_id") Long product_id,@RequestBody Cart cart)
     {
-        cartItemService.addItem(product_id,cart);
+        if (product_id == null || cart == null || cart.getUsers() == null || cart.getUsers().getUserId() == null) {
+            throw new IllegalArgumentException("Product ID and Cart with valid User ID must not be null");
+        }
+        cartItemService.addItem(product_id, cart);
         return "Item added to cart!";
     }
 

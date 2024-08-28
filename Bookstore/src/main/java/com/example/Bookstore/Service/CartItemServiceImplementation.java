@@ -34,57 +34,38 @@ public class CartItemServiceImplementation implements CartItemService{
 
     @Override
     public void addItem(Long productId, Cart cart) {
-        Book book=bookRepository.findById(productId).orElse(null);
-        Cart cart1=cartRepository.findByUserId(cart.getUsers().getUserId()).orElse(null);
-        if(cart1==null)
-        {
-            cart1=new Cart();
-            Users users=usersRepo.findById(cart.getUsers().getUserId()).orElse(null);
-            if(users!=null)
-            {
-                cart1.setUsers(cart.getUsers());
+
+        Book book = bookRepository.findById(productId).orElse(null);
+        if (book == null) {
+            throw new ProductNotFoundException("Product not found!");
+        }
+
+        Cart cart1 = cartRepository.findByUserId(cart.getUsers().getUserId()).orElse(null);
+        if (cart1 == null) {
+            cart1 = new Cart();
+            Users users = usersRepo.findById(cart.getUsers().getUserId()).orElse(null);
+            if (users != null) {
+                cart1.setUsers(users);
                 cart1.setCreated_at(LocalDateTime.now());
-                List<CartItem> items=new ArrayList<>();
-                cart1.setCartItems(items);
+                cart1.setCartItems(new ArrayList<>());
                 cartRepository.save(cart1);
-                CartItem cartItem=new CartItem();
-                cartItem.setBook(book);
-                cartItem.setQuantity(1);
-                cartItem.setCart(cart1);
-                cartItemRepository.save(cartItem);
-                items.add(cartItem);
-                cart1.setCartItems(items);
-                cartRepository.save(cart1);
-
             }
-
-        }
-        else
-        {
-            if(book!=null)
-            {
-                if(book.getStock()==0)
-                {
-                    throw new OutOfStockException();
-                }
-                else
-                {
-                    CartItem cartItem=new CartItem();
-                    cartItem.setBook(book);
-                    cartItem.setQuantity(1);
-                    cartItem.setCart(cart);
-                    cartItemRepository.save(cartItem);
-                    List<CartItem>new_list=cart1.getCartItems();
-                    new_list.add(cartItem);
-                    cart1.setCartItems(new_list);
-                    cartRepository.save(cart1);
-                }
-            }
-            else
-                throw new ProductNotFoundException("Product not found!");
-
         }
 
+        if (book.getStock() == 0) {
+            throw new OutOfStockException();
+        }
+
+        CartItem cartItem = new CartItem();
+        cartItem.setBook(book);
+        cartItem.setQuantity(1);
+        cartItem.setCart(cart1);
+        cartItemRepository.save(cartItem);
+
+        List<CartItem> items = cart1.getCartItems();
+        items.add(cartItem);
+        cart1.setCartItems(items);
+        cartRepository.save(cart1);
     }
 
     @Override
