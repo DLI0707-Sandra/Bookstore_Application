@@ -1,5 +1,7 @@
 package com.example.Bookstore.Service;
 
+import com.example.Bookstore.Exception.OutOfStockException;
+import com.example.Bookstore.Exception.ProductNotFoundException;
 import com.example.Bookstore.Model.Book;
 import com.example.Bookstore.Model.CartItem;
 import com.example.Bookstore.Repository.BookRepository;
@@ -19,14 +21,14 @@ public class CartItemServiceImplementation implements CartItemService{
     BookRepository bookRepository;
 
     @Override
-    public String addItem(Long productId) {
+    public void addItem(Long productId) {
         Book book=bookRepository.findById(productId).orElse(null);
 
         if(book!=null)
         {
             if(book.getStock()==0)
             {
-                return "Out of stock!";
+                throw new OutOfStockException();
             }
             else
             {
@@ -34,11 +36,10 @@ public class CartItemServiceImplementation implements CartItemService{
                 cartItem.setBook(book);
                 cartItem.setQuantity(1);
                 cartItemRepository.save(cartItem);
-                return "Item added to cart!";
             }
         }
         else
-            return "Product not found!";
+            throw new ProductNotFoundException("Product not found!");
     }
 
     @Override

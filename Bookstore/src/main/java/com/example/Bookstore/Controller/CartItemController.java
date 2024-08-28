@@ -17,7 +17,8 @@ public class CartItemController {
     @PostMapping("/add_cart_item/{product_id}")
     public String addCartItem(@PathVariable("product_id") Long product_id)
     {
-        return cartItemService.addItem(product_id);
+        cartItemService.addItem(product_id);
+        return "Item added to cart!";
     }
 
     @PutMapping("/cart_item_quantity/{cartitem_id}")
