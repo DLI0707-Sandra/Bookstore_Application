@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
     public void addCrosMappings(CorsRegistry registry){
         registry.addMapping("/**")
-                .allowedOrigins("https://localhost:8080")
+                .allowedOrigins("https://localhost:4200/")
                 .allowedMethods("GET","POST","PUT","DELETE")
                 .allowedHeaders("*")
                 .allowCredentials(true);

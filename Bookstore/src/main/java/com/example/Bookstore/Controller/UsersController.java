@@ -9,13 +9,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@CrossOrigin
 @RestController
 @RequestMapping("/users")
 public class UsersController {
 
     @Autowired
     UsersServiceImplementation usersService;
-
+    @GetMapping("/allusers")
+    public List<Users> allUser(){
+        return usersService.allUser();
+    }
     @GetMapping("/login")
     public ResponseEntity<?> userLogin(@RequestBody UsersDto loginDTO){
         try{

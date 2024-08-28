@@ -33,47 +33,35 @@ public class WishlistItemServiceImplementation implements WishlistItemService{
 
     @Override
     public void addwishlistItem(Long productId, Wishlist wishlist) {
-        Book book=bookRepository.findById(productId).orElse(null);
-        Wishlist wishlist1 =wishlistRepository.findByUserId(wishlist.getUsers().getUserId()).orElse(null);
-        if(wishlist1 ==null)
-        {
-            wishlist1 =new Wishlist();
-            Users users=usersRepo.findById(wishlist.getUsers().getUserId()).orElse(null);
-            if(users!=null)
-            {
-                wishlist1.setUsers(wishlist.getUsers());
-                wishlist1.setCreated_at(LocalDateTime.now());
-                List<WishlistItems> items=new ArrayList<>();
-                wishlist1.setWishlists(items);
-                wishlistRepository.save(wishlist1);
-                WishlistItems wishlistItem=new WishlistItems();
-                wishlistItem.setBook(book);
-                wishlistItem.setQuantity(1);
-                wishlistItem.setWishlist(wishlist1);
-                wishlistItemRepository.save(wishlistItem);
-                items.add(wishlistItem);
-                wishlist1.setWishlists(items);
-                wishlistRepository.save(wishlist1);
-            }
-        }
-        else
-        {
-            if(book!=null)
-            {
-                WishlistItems wishlistItems=new WishlistItems();
-                wishlistItems.setBook(book);
-                wishlistItems.setQuantity(1);
-                wishlistItems.setWishlist(wishlist);
-                wishlistItemRepository.save(wishlistItems);
-                List<WishlistItems>new_list=wishlist1.getWishlists();
-                new_list.add(wishlistItems);
-                wishlist1.setWishlists(new_list);
-                wishlistRepository.save(wishlist1);
-            }
-            else
-                throw new ProductNotFoundException("Product not found!");
 
-        }
+            Book book = bookRepository.findById(productId).orElse(null);
+            if (book == null) {
+                throw new ProductNotFoundException("Product not found!");
+            }
+
+            Wishlist wishlist1 = wishlistRepository.findByUserId(wishlist.getUsers().getUserId()).orElse(null);
+            if (wishlist1 == null) {
+                wishlist1 = new Wishlist();
+                Users users = usersRepo.findById(wishlist.getUsers().getUserId()).orElse(null);
+                if (users != null) {
+                    wishlist1.setUsers(users);
+                    wishlist1.setCreated_at(LocalDateTime.now());
+                    wishlist1.setWishlists(new ArrayList<>());
+                    wishlistRepository.save(wishlist1);
+                }
+            }
+
+            WishlistItems wishlistItem = new WishlistItems();
+            wishlistItem.setBook(book);
+            wishlistItem.setQuantity(1);
+            wishlistItem.setWishlist(wishlist1);
+            wishlistItemRepository.save(wishlistItem);
+
+            List<WishlistItems> items = wishlist1.getWishlists();
+            items.add(wishlistItem);
+            wishlist1.setWishlists(items);
+            wishlistRepository.save(wishlist1);
+
 
     }
 

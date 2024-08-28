@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -47,9 +48,9 @@ public class UsersServiceImplementation implements UsersService{
           return "User not present";
     }
 
-    public ResponseEntity loginUser(UsersDto loginDTO) {
+    public ResponseEntity<?> loginUser(UsersDto loginDTO) {
         Users users = usersRepo.findByUserName(loginDTO.getUserName());
-
+        System.out.println("loggg\n\n");
         if(users!=null && users.getPassword().equals(loginDTO.getPassword())){
             String token = tokenUtillity.createToken(users.getUserId());
 
@@ -71,4 +72,7 @@ public class UsersServiceImplementation implements UsersService{
         return getUsersById(id);
     }
 
+    public List<Users> allUser() {
+        return usersRepo.findAll();
+    }
 }
