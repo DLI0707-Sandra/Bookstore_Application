@@ -3,12 +3,17 @@ package com.example.Bookstore.Service;
 import com.example.Bookstore.Exception.OutOfStockException;
 import com.example.Bookstore.Exception.ProductNotFoundException;
 import com.example.Bookstore.Model.Book;
+import com.example.Bookstore.Model.Cart;
 import com.example.Bookstore.Model.CartItem;
+import com.example.Bookstore.Model.Users;
 import com.example.Bookstore.Repository.BookRepository;
 import com.example.Bookstore.Repository.CartItemRepository;
+import com.example.Bookstore.Repository.CartRepository;
+import com.example.Bookstore.Repository.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -20,26 +25,53 @@ public class CartItemServiceImplementation implements CartItemService{
     @Autowired
     BookRepository bookRepository;
 
-    @Override
-    public void addItem(Long productId) {
-        Book book=bookRepository.findById(productId).orElse(null);
+    @Autowired
+    CartRepository cartRepository;
 
-        if(book!=null)
+    @Autowired
+    UsersRepo usersRepo;
+
+    @Override
+    public void addItem(Long productId, Cart cart) {
+        Book book=bookRepository.findById(productId).orElse(null);
+        Cart cart1=cartRepository.findByUserId(cart.getUsers().getUserId()).orElse(null);
+        if(cart1==null)
         {
-            if(book.getStock()==0)
+            cart1=new Cart();
+            Users users=usersRepo.findById(cart.getUsers().getUserId()).orElse(null);
+            if(users!=null)
             {
-                throw new OutOfStockException();
+                cart1.setUsers(cart.getUsers());
+                cart1.setCreated_at(LocalDateTime.now());
+                cartRepository.save(cart1);
             }
-            else
-            {
-                CartItem cartItem=new CartItem();
-                cartItem.setBook(book);
-                cartItem.setQuantity(1);
-                cartItemRepository.save(cartItem);
-            }
+
         }
         else
-            throw new ProductNotFoundException("Product not found!");
+        {
+            if(book!=null)
+            {
+                if(book.getStock()==0)
+                {
+                    throw new OutOfStockException();
+                }
+                else
+                {
+                    CartItem cartItem=new CartItem();
+                    cartItem.setBook(book);
+                    cartItem.setQuantity(1);
+                    cartItemRepository.save(cartItem);
+                    List<CartItem>new_list=cart1.getCartItems();
+                    new_list.add(cartItem);
+                    cart1.setCartItems(new_list);
+                    cartRepository.save(cart1);
+                }
+            }
+            else
+                throw new ProductNotFoundException("Product not found!");
+
+        }
+
     }
 
     @Override
