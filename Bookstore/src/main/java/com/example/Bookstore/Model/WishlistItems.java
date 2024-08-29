@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "wishlist_items")
+@Table(name = "wishlist_items",uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"cart_id", "book_id"})})
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class WishlistItems {
     @Id
@@ -23,7 +24,7 @@ public class WishlistItems {
     @JoinColumn(name = "wishlist_id")
     private Wishlist wishlist;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="book_id")
     private Book book;
 

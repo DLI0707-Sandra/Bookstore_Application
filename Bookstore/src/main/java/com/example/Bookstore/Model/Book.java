@@ -60,8 +60,8 @@ public class Book {
     @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
     private OrderItem orderItem;
 
-    @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
-    private WishlistItems wishlistItems;
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    private List<WishlistItems> wishlistItems;
 
     @OneToMany(mappedBy = "book",cascade = CascadeType.ALL)
     private List<Feedback> feedbackList;

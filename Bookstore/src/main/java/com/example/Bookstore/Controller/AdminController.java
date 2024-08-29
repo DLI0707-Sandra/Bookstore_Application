@@ -40,12 +40,12 @@ public class AdminController {
         return bookService.addBook(book);
     }
 
-    @PostMapping("/update/book/{bookId}")
+    @PutMapping("/update/book/{bookId}")
     public Book updateBook(@PathVariable Long product_id, @RequestBody Book book) {
         return bookService.updateBook(product_id, book);
     }
 
-    @PostMapping("/delete/book/{bookId}")
+    @DeleteMapping("/delete/book/{bookId}")
     public String deleteBook(@PathVariable Long product_id) {
 
         return bookService.deleteBook(product_id);
