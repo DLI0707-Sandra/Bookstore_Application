@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order_items")
+@Table(name = "order_items") // order_items table is created
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class OrderItem {
 
@@ -45,6 +45,6 @@ public class OrderItem {
                 ", quantity=" + quantity +
                 ", price=" + price +
                 '}';
-    }
+    } // return the order item details
 
 }

@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("bookstore_user")
 public class OrderController {
+    // OrderService object is created and autowired
 
     @Autowired
     OrderService orderService;
 
     @PostMapping("/add/order")
-    public void createOrder(@RequestBody Long userId)
+    public void createOrder(@RequestBody Long userId) // createOrder method is called with userId as parameter
     {
         orderService.createOrder(userId);
     }
