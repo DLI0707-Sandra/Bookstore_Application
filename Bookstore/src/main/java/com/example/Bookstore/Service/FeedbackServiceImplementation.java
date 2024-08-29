@@ -9,13 +9,10 @@ import com.example.Bookstore.Model.Users;
 import com.example.Bookstore.Repository.BookRepository;
 import com.example.Bookstore.Repository.FeedbackRepository;
 import com.example.Bookstore.Repository.UsersRepo;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class FeedbackServiceImplementation implements FeedbackService{
@@ -54,28 +51,8 @@ public class FeedbackServiceImplementation implements FeedbackService{
     }
 
     @Override
-    public List<Feedback> getAllFeedback() {
-        return feedbackRepository.findAll();
-    }
-
-    @Override
-    public List<Feedback> getFeedbackByProductId(Long productId) {
+    public List<Feedback> getFeedbackByProductId(Long productId)
+    {
         return feedbackRepository.findByBookId(productId);
-    }
-
-    @Override
-    public Feedback getFeedbackById(Long id) {
-        return feedbackRepository.findById(id).orElse(null);
-    }
-
-    @Override
-    public String deleteFeedbackById(Long id) {
-        if (feedbackRepository.findById(id).isEmpty())
-            return "Feedback not found";
-        else
-        {
-            feedbackRepository.deleteById(id);
-            return "Feedback deleted";
-        }
     }
 }
