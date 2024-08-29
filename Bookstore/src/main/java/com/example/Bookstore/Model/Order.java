@@ -26,7 +26,7 @@ public class Order {
     private Users users;
 
     @Column(name = "total_amount")
-    private BigDecimal totalAmount;
+    private double totalAmount;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "order_status")
