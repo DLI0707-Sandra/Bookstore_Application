@@ -19,8 +19,8 @@ public class CartItemController {
     @Autowired
     CartItemService cartItemService;
 
-    @PostMapping("/add_cart_item/{product_id}")
-    public String addCartItem(@PathVariable("product_id") Long product_id,@RequestBody Cart cart)
+    @PostMapping("/add_cart_item/{bookId}")
+    public String addCartItem(@PathVariable("bookId") Long product_id,@RequestBody Cart cart)
     {
         if (product_id == null || cart == null || cart.getUsers() == null || cart.getUsers().getUserId() == null) {
             throw new IllegalArgumentException("Product ID and Cart with valid User ID must not be null");
