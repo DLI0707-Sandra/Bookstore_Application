@@ -53,11 +53,9 @@ public class FeedbackServiceImplementation implements FeedbackService{
         return "Feedback added!";
     }
 
-
-
     @Override
     public List<Feedback> getFeedbackByProductId(Long productId) {
         return feedbackRepository.findByBookId(productId);
     }
-    
+
 }

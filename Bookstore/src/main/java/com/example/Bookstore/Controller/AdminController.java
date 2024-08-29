@@ -2,6 +2,8 @@ package com.example.Bookstore.Controller;
 import com.example.Bookstore.DTO.AdminLoginDTO;
 import com.example.Bookstore.Model.Admin;
 import com.example.Bookstore.Model.Book;
+import com.example.Bookstore.Model.Order;
+import com.example.Bookstore.Repository.OrderRepository;
 import com.example.Bookstore.Service.AdminService;
 import com.example.Bookstore.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/bookstore_user/admin")
@@ -21,6 +25,15 @@ public class AdminController {
     @Autowired
     private BookService bookService;
 
+
+    @Autowired
+    OrderRepository orderRepository;
+
+    @GetMapping("/get/order")
+    public List<Order> getOrders()
+    {
+        return orderRepository.findAll();
+    }
 
     @PostMapping(value = "/add/book")
     public Book addBook(@RequestBody Book book) {
