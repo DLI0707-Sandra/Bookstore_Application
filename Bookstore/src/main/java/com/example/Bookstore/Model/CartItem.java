@@ -11,7 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "cart_items")
+@Table(name = "cart_items",uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"cart_id", "book_id"})
+})
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class CartItem {
 
@@ -23,10 +25,21 @@ public class CartItem {
     @JoinColumn(name = "cart_id")
     private Cart cart;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="book_id")
     private Book book;
 
     @Column(name = "quantity")
     private int quantity;
+
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "id=" + id +
+                ", cartId=" + (cart != null ? cart.getId() : "null") +
+                ", bookId=" + (book != null ? book.getId() : "null") +
+                ", quantity=" + quantity +
+                '}';
+    }
+
 }

@@ -12,11 +12,6 @@ import java.util.Optional;
 public interface FeedbackService {
      String  addFeedback(Long product_id, FeedbackDTO feedbackDTO);
 
-     List<Feedback> getAllFeedback();
-
      List<Feedback> getFeedbackByProductId(Long productId);
 
-     Feedback getFeedbackById(Long id);
-
-     String deleteFeedbackById(Long id);
 }

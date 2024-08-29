@@ -32,4 +32,15 @@ public class Cart {
 
     @OneToMany(mappedBy = "cart")
     private List<CartItem> cartItems;
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "id=" + id +
+                ", userId=" + (users != null ? users.getUserId() : "null") +
+                ", created_at=" + created_at +
+                ", cartItems=" + cartItems +
+                '}';
+    }
+
 }

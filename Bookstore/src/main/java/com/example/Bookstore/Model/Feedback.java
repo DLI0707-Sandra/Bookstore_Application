@@ -46,4 +46,17 @@ public class Feedback {
     @Column(name = "created_at")
     private LocalDateTime created_at;
 
+    @Override
+    public String toString() {
+        return "Feedback{" +
+                "feedback_id=" + feedback_id +
+                ", userId=" + (users != null ? users.getUserId() : "null") +
+                ", bookId=" + (book != null ? book.getId() : "null") +
+                ", rating=" + rating +
+                ", comment='" + comment + '\'' +
+                ", created_at=" + created_at +
+                '}';
+    }
+
+
 }

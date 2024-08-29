@@ -50,4 +50,20 @@ public class Users {
 
     @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
     private List<Feedback> feedbackList;
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", created_at=" + created_at +
+                ", customerDetails=" + (customerDetails != null ? customerDetails.getCustomerId() : "null") +
+                ", cartId=" + (cart != null ? cart.getId() : "null") +
+                ", wishlistId=" + (wishlist != null ? wishlist.getId() : "null") +
+                ", feedbackList=" + feedbackList +
+                '}';
+    }
+
 }

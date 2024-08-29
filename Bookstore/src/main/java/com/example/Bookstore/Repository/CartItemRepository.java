@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CartItemRepository extends JpaRepository<CartItem,Long> {
 
+    CartItem findByCartIdAndBookId(Long id, Long id1);
 }

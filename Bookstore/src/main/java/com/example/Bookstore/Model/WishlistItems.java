@@ -30,4 +30,15 @@ public class WishlistItems {
     @Column(name = "quantity")
     private int quantity;
 
+    @Override
+    public String toString() {
+        return "WishlistItems{" +
+                "id=" + id +
+                ", wishlistId=" + (wishlist != null ? wishlist.getId() : "null") +
+                ", bookId=" + (book != null ? book.getId() : "null") +
+                ", quantity=" + quantity +
+                '}';
+    }
+
+
 }

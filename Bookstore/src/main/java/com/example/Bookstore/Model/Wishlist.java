@@ -28,6 +28,17 @@ public class Wishlist {
 
     @OneToMany(mappedBy = "wishlist")
     private List<WishlistItems> wishlists;
+
+    @Override
+    public String toString() {
+        return "Wishlist{" +
+                "id=" + id +
+                ", userId=" + (users != null ? users.getUserId() : "null") +
+                ", created_at=" + created_at +
+                ", wishlists=" + wishlists +
+                '}';
+    }
+
 }
 
 

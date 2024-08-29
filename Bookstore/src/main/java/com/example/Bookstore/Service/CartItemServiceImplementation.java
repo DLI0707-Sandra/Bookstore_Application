@@ -56,16 +56,19 @@ public class CartItemServiceImplementation implements CartItemService{
             throw new OutOfStockException();
         }
 
-        CartItem cartItem = new CartItem();
-        cartItem.setBook(book);
-        cartItem.setQuantity(1);
-        cartItem.setCart(cart1);
-        cartItemRepository.save(cartItem);
+            CartItem cartItem = new CartItem();
+            cartItem.setBook(book);
+            System.out.println(book);
+            cartItem.setQuantity(1);
+            cartItem.setCart(cart1);
+            System.out.println(cart1);
+            cartItemRepository.save(cartItem);
 
-        List<CartItem> items = cart1.getCartItems();
-        items.add(cartItem);
-        cart1.setCartItems(items);
-        cartRepository.save(cart1);
+            List<CartItem> items = cart1.getCartItems();
+            items.add(cartItem);
+            cart1.setCartItems(items);
+            cartRepository.save(cart1);
+
     }
 
     @Override

@@ -54,28 +54,8 @@ public class FeedbackServiceImplementation implements FeedbackService{
     }
 
     @Override
-    public List<Feedback> getAllFeedback() {
-        return feedbackRepository.findAll();
-    }
-
-    @Override
     public List<Feedback> getFeedbackByProductId(Long productId) {
         return feedbackRepository.findByBookId(productId);
     }
 
-    @Override
-    public Feedback getFeedbackById(Long id) {
-        return feedbackRepository.findById(id).orElse(null);
-    }
-
-    @Override
-    public String deleteFeedbackById(Long id) {
-        if (feedbackRepository.findById(id).isEmpty())
-            return "Feedback not found";
-        else
-        {
-            feedbackRepository.deleteById(id);
-            return "Feedback deleted";
-        }
-    }
 }
