@@ -20,8 +20,8 @@ public class UsersServiceImplementation implements UsersService{
    @Autowired
     UsersRepo usersRepo;
 
-    @Autowired
-    PasswordEncoder passwordEncoder;
+//    @Autowired
+//    PasswordEncoder passwordEncoder;
 
     @Autowired
     TokenUtillity tokenUtillity;
@@ -32,7 +32,8 @@ public class UsersServiceImplementation implements UsersService{
       newUSer.setUserId(users.getUserId());
       newUSer.setUserName(users.getUserName());
       newUSer.setEmail(users.getEmail());
-      newUSer.setPassword(passwordEncoder.encode(users.getPassword()));
+    //  newUSer.setPassword(passwordEncoder.encode(users.getPassword()));
+        newUSer.setPassword(users.getPassword());
      newUSer.setCreated_at(LocalDateTime.now());
     usersRepo.save(newUSer);
         return "User added";
@@ -43,7 +44,8 @@ public class UsersServiceImplementation implements UsersService{
         System.out.println("hello hello");
       Users result= usersRepo.findByUserName(usersDto.getUserName());
       if(result!=null){
-          if(passwordEncoder.matches(result.getPassword(),usersDto.getPassword())){
+         // if(passwordEncoder.matches(result.getPassword(),usersDto.getPassword())){
+          if(result.getPassword().equals(usersDto.getPassword())){
               return "User login";
           }
           else
@@ -55,7 +57,8 @@ public class UsersServiceImplementation implements UsersService{
     public ResponseEntity<?> loginUser(UsersDto loginDTO) {
         Users users = usersRepo.findByUserName(loginDTO.getUserName());
         System.out.println("loggg\n\n");
-        if(users!=null && passwordEncoder.matches(users.getPassword(),loginDTO.getPassword())){
+        //if(users!=null && passwordEncoder.matches(users.getPassword(),loginDTO.getPassword())){
+        if(users!=null && users.getPassword().equals(loginDTO.getPassword())){
             String token = tokenUtillity.createToken(users.getUserId());
 
             Map<String, Object> response = new HashMap<>();

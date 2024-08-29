@@ -32,22 +32,23 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable) // Updated way to disable CSRF
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/users/registration", "/users/login").permitAll()
+                        .requestMatchers("/users/registration", "/users/login")
+                        .permitAll()
                         .anyRequest().authenticated()
                 );
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+//    @Bean
+//    public PasswordEncoder passwordEncoder() {
+//        return new BCryptPasswordEncoder();
+//    }
 
-    @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.Bookstore.controller"))
-                .paths(PathSelectors.any())
-                .build();
-    }
+//    @Bean
+//    public Docket api() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .select()
+//                .apis(RequestHandlerSelectors.basePackage("com.example.Bookstore.controller"))
+//                .paths(PathSelectors.any())
+//                .build();
+//    }
 }

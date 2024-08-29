@@ -8,4 +8,6 @@ public interface CustomerDetailsService {
     public String addCustomer(CustomerDetails customerDetails);
     public String updateCustomerById(Long id,CustomerDetails customerDetails);
     public List<CustomerDetails> readAll();
+
+    String deletebyId(Long id);
 }

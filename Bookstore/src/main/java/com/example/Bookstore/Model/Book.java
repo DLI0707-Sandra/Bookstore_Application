@@ -19,13 +19,13 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name="books")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "bookId")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long bookId;
+    private Long id;
 
     @NotNull
     @Column(name="name")

@@ -1,0 +1,203 @@
+2024-08-29T13:02:44.714+05:30  INFO 27828 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : Starting BookstoreApplication using Java 21.0.4 with PID 27828 (C:\Users\dipanshu.1\Downloads\SpringSessionPractice-Spring21Aug\Bookstore_Application\Bookstore\target\classes started by Dipanshu.1 in C:\Users\dipanshu.1\Downloads\SpringSessionPractice-Spring21Aug\Bookstore_Application)
+2024-08-29T13:02:44.717+05:30 DEBUG 27828 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-29T13:02:44.718+05:30  INFO 27828 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : The following 2 profiles are active: "test", "log"
+2024-08-29T13:02:44.777+05:30  INFO 27828 --- [Bookstore] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-29T13:02:44.777+05:30  INFO 27828 --- [Bookstore] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-29T13:02:46.008+05:30  INFO 27828 --- [Bookstore] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-29T13:02:46.122+05:30  INFO 27828 --- [Bookstore] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 11 JPA repository interfaces.
+2024-08-29T13:02:47.169+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-29T13:02:47.175+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-08-29T13:02:47.180+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-08-29T13:02:47.192+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-29T13:02:47.193+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-29T13:02:47.257+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-29T13:02:47.258+05:30  INFO 27828 --- [Bookstore] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2480 ms
+2024-08-29T13:02:47.588+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-29T13:02:47.661+05:30  INFO 27828 --- [Bookstore] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-29T13:02:47.704+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-29T13:02:48.130+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-29T13:02:48.155+05:30  INFO 27828 --- [Bookstore] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-29T13:02:48.567+05:30  INFO 27828 --- [Bookstore] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6b3e13a0
+2024-08-29T13:02:48.568+05:30  INFO 27828 --- [Bookstore] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-29T13:02:48.616+05:30  WARN 27828 --- [Bookstore] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-29T13:02:50.040+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-29T13:02:50.199+05:30  INFO 27828 --- [Bookstore] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-29T13:02:50.723+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-29T13:02:51.375+05:30  WARN 27828 --- [Bookstore] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-29T13:02:51.394+05:30  WARN 27828 --- [Bookstore] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d3beec93-9333-43dd-8fd0-5f5ed5be003d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-08-29T13:02:51.403+05:30  INFO 27828 --- [Bookstore] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-08-29T13:02:52.162+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-29T13:02:52.243+05:30  INFO 27828 --- [Bookstore] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-29T13:02:52.252+05:30  INFO 27828 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : Started BookstoreApplication in 8.129 seconds (process running for 8.877)
+2024-08-29T13:02:52.262+05:30  INFO 27828 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : info level
+2024-08-29T13:17:51.298+05:30  INFO 27828 --- [Bookstore] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-29T13:17:51.304+05:30  INFO 27828 --- [Bookstore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-29T13:17:51.321+05:30  INFO 27828 --- [Bookstore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-29T14:36:21.047+05:30  INFO 2700 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : Starting BookstoreApplication using Java 21.0.4 with PID 2700 (C:\Users\dipanshu.1\Downloads\SpringSessionPractice-Spring21Aug\Bookstore_Application\Bookstore\target\classes started by Dipanshu.1 in C:\Users\dipanshu.1\Downloads\SpringSessionPractice-Spring21Aug\Bookstore_Application)
+2024-08-29T14:36:21.063+05:30 DEBUG 2700 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-29T14:36:21.063+05:30  INFO 2700 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : The following 2 profiles are active: "test", "log"
+2024-08-29T14:36:21.134+05:30  INFO 2700 --- [Bookstore] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-29T14:36:21.134+05:30  INFO 2700 --- [Bookstore] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-29T14:36:22.199+05:30  INFO 2700 --- [Bookstore] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-29T14:36:22.293+05:30  INFO 2700 --- [Bookstore] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 11 JPA repository interfaces.
+2024-08-29T14:36:23.226+05:30  INFO 2700 --- [Bookstore] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-29T14:36:23.237+05:30  INFO 2700 --- [Bookstore] [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-08-29T14:36:23.237+05:30  INFO 2700 --- [Bookstore] [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-08-29T14:36:23.242+05:30  INFO 2700 --- [Bookstore] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-29T14:36:23.242+05:30  INFO 2700 --- [Bookstore] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-29T14:36:23.304+05:30  INFO 2700 --- [Bookstore] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-29T14:36:23.304+05:30  INFO 2700 --- [Bookstore] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2170 ms
+2024-08-29T14:36:23.605+05:30  INFO 2700 --- [Bookstore] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-29T14:36:23.684+05:30  INFO 2700 --- [Bookstore] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-29T14:36:23.715+05:30  INFO 2700 --- [Bookstore] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-29T14:36:23.998+05:30  INFO 2700 --- [Bookstore] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-29T14:36:24.014+05:30  INFO 2700 --- [Bookstore] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-29T14:36:24.171+05:30  INFO 2700 --- [Bookstore] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@acbd2ad
+2024-08-29T14:36:24.171+05:30  INFO 2700 --- [Bookstore] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-29T14:36:24.186+05:30  WARN 2700 --- [Bookstore] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-29T14:36:24.422+05:30 ERROR 2700 --- [Bookstore] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Association 'com.example.Bookstore.Model.Cart.cartItems' is 'mappedBy' another entity and may not specify the '@JoinColumn'
+2024-08-29T14:36:24.422+05:30  WARN 2700 --- [Bookstore] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Association 'com.example.Bookstore.Model.Cart.cartItems' is 'mappedBy' another entity and may not specify the '@JoinColumn'
+2024-08-29T14:36:24.422+05:30  INFO 2700 --- [Bookstore] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-29T14:36:24.491+05:30  INFO 2700 --- [Bookstore] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-29T14:36:24.491+05:30  INFO 2700 --- [Bookstore] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-29T14:36:24.506+05:30  INFO 2700 --- [Bookstore] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-29T14:36:24.539+05:30 ERROR 2700 --- [Bookstore] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Association 'com.example.Bookstore.Model.Cart.cartItems' is 'mappedBy' another entity and may not specify the '@JoinColumn'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.2.jar:3.3.2]
+	at com.example.Bookstore.BookstoreApplication.main(BookstoreApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.2.jar:3.3.2]
+Caused by: org.hibernate.AnnotationException: Association 'com.example.Bookstore.Model.Cart.cartItems' is 'mappedBy' another entity and may not specify the '@JoinColumn'
+	at org.hibernate.boot.model.internal.CollectionBinder.detectMappedByProblem(CollectionBinder.java:1278) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bind(CollectionBinder.java:1192) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.CollectionBinder.bindCollection(CollectionBinder.java:370) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.bindProperty(PropertyBinder.java:887) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.buildProperty(PropertyBinder.java:801) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.PropertyBinder.processElementAnnotations(PropertyBinder.java:722) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.processIdPropertiesIfNotAlready(EntityBinder.java:1083) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:416) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:248) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:399) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:259) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:281) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.11.jar:6.1.11]
+	... 18 common frames omitted
+
+2024-08-29T14:39:20.776+05:30  INFO 10196 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : Starting BookstoreApplication using Java 21.0.4 with PID 10196 (C:\Users\dipanshu.1\Downloads\SpringSessionPractice-Spring21Aug\Bookstore_Application\Bookstore\target\classes started by Dipanshu.1 in C:\Users\dipanshu.1\Downloads\SpringSessionPractice-Spring21Aug\Bookstore_Application)
+2024-08-29T14:39:20.776+05:30 DEBUG 10196 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-29T14:39:20.776+05:30  INFO 10196 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : The following 2 profiles are active: "test", "log"
+2024-08-29T14:39:20.836+05:30  INFO 10196 --- [Bookstore] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-29T14:39:20.836+05:30  INFO 10196 --- [Bookstore] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-29T14:39:22.137+05:30  INFO 10196 --- [Bookstore] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-29T14:39:22.231+05:30  INFO 10196 --- [Bookstore] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 11 JPA repository interfaces.
+2024-08-29T14:39:23.110+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-29T14:39:23.110+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-08-29T14:39:23.125+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-08-29T14:39:23.141+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-29T14:39:23.141+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-29T14:39:23.188+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-29T14:39:23.188+05:30  INFO 10196 --- [Bookstore] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2352 ms
+2024-08-29T14:39:23.524+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-29T14:39:23.602+05:30  INFO 10196 --- [Bookstore] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-29T14:39:23.634+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-29T14:39:23.980+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-29T14:39:23.996+05:30  INFO 10196 --- [Bookstore] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-29T14:39:24.137+05:30  INFO 10196 --- [Bookstore] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@54bab4f6
+2024-08-29T14:39:24.137+05:30  INFO 10196 --- [Bookstore] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-29T14:39:24.169+05:30  WARN 10196 --- [Bookstore] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-29T14:39:25.287+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-29T14:39:25.429+05:30  INFO 10196 --- [Bookstore] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-29T14:39:25.887+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-29T14:39:26.654+05:30  WARN 10196 --- [Bookstore] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-29T14:39:26.684+05:30  WARN 10196 --- [Bookstore] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1c3a05fe-50da-4b23-9b0c-4f8b87275f12
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-08-29T14:39:26.700+05:30  INFO 10196 --- [Bookstore] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-08-29T14:39:27.451+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-29T14:39:27.483+05:30  INFO 10196 --- [Bookstore] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-29T14:39:27.499+05:30  INFO 10196 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : Started BookstoreApplication in 7.369 seconds (process running for 7.942)
+2024-08-29T14:39:27.499+05:30  INFO 10196 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : info level
+2024-08-29T14:48:42.833+05:30  INFO 10196 --- [Bookstore] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-29T14:48:42.834+05:30  INFO 10196 --- [Bookstore] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-29T14:48:42.835+05:30  INFO 10196 --- [Bookstore] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-29T14:49:57.476+05:30  WARN 10196 --- [Bookstore] [http-nio-8080-exec-6] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+2024-08-29T14:55:36.235+05:30  INFO 10196 --- [Bookstore] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-29T14:55:36.235+05:30  INFO 10196 --- [Bookstore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-29T14:55:36.250+05:30  INFO 10196 --- [Bookstore] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-29T14:55:41.258+05:30  INFO 30264 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : Starting BookstoreApplication using Java 21.0.4 with PID 30264 (C:\Users\dipanshu.1\Downloads\SpringSessionPractice-Spring21Aug\Bookstore_Application\Bookstore\target\classes started by Dipanshu.1 in C:\Users\dipanshu.1\Downloads\SpringSessionPractice-Spring21Aug\Bookstore_Application)
+2024-08-29T14:55:41.258+05:30 DEBUG 30264 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-29T14:55:41.258+05:30  INFO 30264 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : The following 2 profiles are active: "test", "log"
+2024-08-29T14:55:41.329+05:30  INFO 30264 --- [Bookstore] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-29T14:55:41.329+05:30  INFO 30264 --- [Bookstore] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-29T14:55:42.618+05:30  INFO 30264 --- [Bookstore] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-29T14:55:42.745+05:30  INFO 30264 --- [Bookstore] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 11 JPA repository interfaces.
+2024-08-29T14:55:43.631+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-29T14:55:43.647+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-08-29T14:55:43.647+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-08-29T14:55:43.663+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-29T14:55:43.663+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-29T14:55:43.711+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-29T14:55:43.711+05:30  INFO 30264 --- [Bookstore] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2382 ms
+2024-08-29T14:55:44.043+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-29T14:55:44.139+05:30  INFO 30264 --- [Bookstore] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-29T14:55:44.170+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-29T14:55:44.550+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-29T14:55:44.581+05:30  INFO 30264 --- [Bookstore] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-29T14:55:44.724+05:30  INFO 30264 --- [Bookstore] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1b1844b
+2024-08-29T14:55:44.739+05:30  INFO 30264 --- [Bookstore] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-29T14:55:44.755+05:30  WARN 30264 --- [Bookstore] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-29T14:55:45.946+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-29T14:55:46.058+05:30  INFO 30264 --- [Bookstore] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-29T14:55:46.532+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-29T14:55:47.164+05:30  WARN 30264 --- [Bookstore] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-29T14:55:47.201+05:30  WARN 30264 --- [Bookstore] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: a75b0c08-f053-4aec-bbf1-18bbadce6254
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-08-29T14:55:47.228+05:30  INFO 30264 --- [Bookstore] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-08-29T14:55:47.943+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-29T14:55:48.006+05:30  INFO 30264 --- [Bookstore] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-29T14:55:48.006+05:30  INFO 30264 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : Started BookstoreApplication in 7.41 seconds (process running for 8.018)
+2024-08-29T14:55:48.023+05:30  INFO 30264 --- [Bookstore] [restartedMain] c.e.Bookstore.BookstoreApplication       : info level
+2024-08-29T14:56:50.534+05:30  INFO 30264 --- [Bookstore] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-29T14:56:50.534+05:30  INFO 30264 --- [Bookstore] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-29T14:56:50.534+05:30  INFO 30264 --- [Bookstore] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-08-29T15:12:30.245+05:30  WARN 30264 --- [Bookstore] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m14s436ms157µs200ns).
+2024-08-29T15:26:09.275+05:30  WARN 30264 --- [Bookstore] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m8s876ms177µs600ns).

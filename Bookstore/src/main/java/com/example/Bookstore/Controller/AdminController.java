@@ -4,6 +4,7 @@ import com.example.Bookstore.Model.Admin;
 import com.example.Bookstore.Model.Book;
 import com.example.Bookstore.Service.AdminService;
 import com.example.Bookstore.Service.BookService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/bookstore_user/admin")
+
 public class AdminController {
 
     @Autowired

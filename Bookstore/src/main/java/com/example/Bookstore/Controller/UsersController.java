@@ -4,6 +4,7 @@ import com.example.Bookstore.DTO.UsersDto;
 import com.example.Bookstore.Model.Users;
 import com.example.Bookstore.Service.UsersService;
 import com.example.Bookstore.Service.UsersServiceImplementation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

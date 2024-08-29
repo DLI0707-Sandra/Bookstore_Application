@@ -4,6 +4,7 @@ import com.example.Bookstore.Model.Book;
 import com.example.Bookstore.Model.Feedback;
 import com.example.Bookstore.Model.FeedbackDTO;
 import com.example.Bookstore.Service.FeedbackService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/bookstore_user")
+@Slf4j
 public class FeedbackController {
     @Autowired
     FeedbackService feedbackService;

@@ -6,6 +6,7 @@ import com.example.Bookstore.Model.Users;
 import com.example.Bookstore.Repository.CartRepository;
 import com.example.Bookstore.Repository.UsersRepo;
 import com.example.Bookstore.Service.CartItemService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/bookstore_user")
+@Slf4j
 public class CartItemController {
 
     @Autowired

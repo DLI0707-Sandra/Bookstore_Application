@@ -41,6 +41,15 @@ public class CustomerDetailsServiceImplementation implements CustomerDetailsServ
 
 
     }
+    @Override
+    public String deletebyId(Long id){
+        if(customerDetailsRepo.findById(id).isPresent()) {
+            customerDetailsRepo.deleteById(id);
+            return "User deleted";
+        }else
+            return "user not found";
+
+    }
 
     @Override
     public List<CustomerDetails> readAll() {
