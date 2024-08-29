@@ -28,30 +28,30 @@ public class FeedbackServiceImplementation implements FeedbackService{
     @Autowired
     UsersRepo usersRepo;
 
-//    @Override
-//    public String  addFeedback(Long product_id, FeedbackDTO feedbackDTO) {
-//        Feedback feedback=new Feedback();
-//        Long user_id=feedbackDTO.getUser_id();
-//        Users users=usersRepo.findById(user_id).orElse(null);
-//        Book book=bookRepository.findById(product_id).orElse(null);
-//        if(users!=null&&book!=null)
-//        {
-//            feedback.setBook(book);
-//            feedback.setUsers(users);
-//            feedback.setRating(feedbackDTO.getRating());
-//            feedback.setComment(feedbackDTO.getComment());
-//            feedback.setCreated_at(LocalDateTime.now());
-//            feedbackRepository.save(feedback);
-//        }
-//        else
-//        {
-//            if(book==null)
-//                throw new ProductNotFoundException("Book not found!");
-//            if(users==null)
-//                throw new UserNotFoundException("User not found!");
-//        }
-//        return "Feedback added!";
-//    }
+    @Override
+    public String  addFeedback(Long product_id, FeedbackDTO feedbackDTO) {
+        Feedback feedback=new Feedback();
+        Long user_id=feedbackDTO.getUser_id();
+        Users users=usersRepo.findById(user_id).orElse(null);
+        Book book=bookRepository.findById(product_id).orElse(null);
+        if(users!=null&&book!=null)
+        {
+            feedback.setBook(book);
+            feedback.setUsers(users);
+            feedback.setRating(feedbackDTO.getRating());
+            feedback.setComment(feedbackDTO.getComment());
+            feedback.setCreated_at(LocalDateTime.now());
+            feedbackRepository.save(feedback);
+        }
+        else
+        {
+            if(book==null)
+                throw new ProductNotFoundException("Book not found!");
+            if(users==null)
+                throw new UserNotFoundException("User not found!");
+        }
+        return "Feedback added!";
+    }
 
     @Override
     public List<Feedback> getAllFeedback() {

@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 public interface FeedbackService {
-//     String  addFeedback(Long product_id, FeedbackDTO feedbackDTO);
+     String  addFeedback(Long product_id, FeedbackDTO feedbackDTO);
 
      List<Feedback> getAllFeedback();
 
