@@ -7,6 +7,7 @@ import com.example.Bookstore.util.TokenUtillity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -20,6 +21,9 @@ public class UsersServiceImplementation implements UsersService{
     UsersRepo usersRepo;
 
     @Autowired
+    PasswordEncoder passwordEncoder;
+
+    @Autowired
     TokenUtillity tokenUtillity;
 
     @Override
@@ -28,7 +32,7 @@ public class UsersServiceImplementation implements UsersService{
       newUSer.setUserId(users.getUserId());
       newUSer.setUserName(users.getUserName());
       newUSer.setEmail(users.getEmail());
-      newUSer.setPassword(users.getPassword());
+      newUSer.setPassword(passwordEncoder.encode(users.getPassword()));
      newUSer.setCreated_at(LocalDateTime.now());
     usersRepo.save(newUSer);
         return "User added";
@@ -39,7 +43,7 @@ public class UsersServiceImplementation implements UsersService{
         System.out.println("hello hello");
       Users result= usersRepo.findByUserName(usersDto.getUserName());
       if(result!=null){
-          if(result.getPassword().equals(usersDto.getPassword())){
+          if(passwordEncoder.matches(result.getPassword(),usersDto.getPassword())){
               return "User login";
           }
           else
@@ -51,7 +55,7 @@ public class UsersServiceImplementation implements UsersService{
     public ResponseEntity<?> loginUser(UsersDto loginDTO) {
         Users users = usersRepo.findByUserName(loginDTO.getUserName());
         System.out.println("loggg\n\n");
-        if(users!=null && users.getPassword().equals(loginDTO.getPassword())){
+        if(users!=null && passwordEncoder.matches(users.getPassword(),loginDTO.getPassword())){
             String token = tokenUtillity.createToken(users.getUserId());
 
             Map<String, Object> response = new HashMap<>();
