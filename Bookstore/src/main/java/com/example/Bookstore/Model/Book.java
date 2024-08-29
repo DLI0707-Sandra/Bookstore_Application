@@ -1,6 +1,8 @@
 package com.example.Bookstore.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -16,11 +18,13 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name="books")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "bookId")
+
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long bookId;
 
     @NotNull
     @Column(name="name")

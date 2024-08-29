@@ -21,8 +21,8 @@ public class WishlistItemController {
         return wishlistItemService.getAllWishlists();
     }
 
-    @PostMapping("/add_wishlist_item/{product_id}")
-    public String addwishlistItem(@PathVariable("product_id") Long product_id,@RequestBody Wishlist wishlist) {
+    @PostMapping("/add_wishlist_item/{bookId}")
+    public String addwishlistItem(@PathVariable("bookId") Long product_id,@RequestBody Wishlist wishlist) {
         if (product_id == null || wishlist == null || wishlist.getUsers() == null || wishlist.getUsers().getUserId() == null) {
             throw new IllegalArgumentException("Product ID and Cart with valid User ID must not be null");
         }
