@@ -48,7 +48,7 @@ public class Order {
                 ", created_at=" + created_at +
                 ", orderItems=" + (orderItems != null ? orderItems.size() : "null") +
                 '}';
-    }
+    }// return the order details
 
 
 }

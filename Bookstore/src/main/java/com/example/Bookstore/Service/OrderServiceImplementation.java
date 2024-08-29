@@ -31,9 +31,9 @@ public class OrderServiceImplementation implements OrderService{
     @Autowired
     CartRepository cartRepository;
 
-    @Transactional
+    @Transactional // This annotation is used to perform a transaction on the method
     @Override
-    public void createOrder(Long userId) {
+    public void createOrder(Long userId) { // createOrder method with userId as parameter
         Users user=usersRepo.findById(userId).orElse(null);
         Cart cart=cartRepository.findByUserId(userId).orElse(null);
         if(cart!=null)
