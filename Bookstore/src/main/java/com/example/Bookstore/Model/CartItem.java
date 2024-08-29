@@ -29,4 +29,15 @@ public class CartItem {
 
     @Column(name = "quantity")
     private int quantity;
+
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "id=" + id +
+                ", cartId=" + (cart != null ? cart.getId() : "null") +
+                ", bookId=" + (book != null ? book.getId() : "null") +
+                ", quantity=" + quantity +
+                '}';
+    }
+
 }

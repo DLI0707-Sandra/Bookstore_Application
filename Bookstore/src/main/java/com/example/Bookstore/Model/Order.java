@@ -38,4 +38,17 @@ public class Order {
     @OneToMany (mappedBy = "order")
     private List<OrderItem> orderItems;
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", userId=" + (users != null ? users.getUserId() : "null") +
+                ", totalAmount=" + totalAmount +
+                ", orderStatus=" + orderStatus +
+                ", created_at=" + created_at +
+                ", orderItems=" + (orderItems != null ? orderItems.size() : "null") +
+                '}';
+    }
+
+
 }

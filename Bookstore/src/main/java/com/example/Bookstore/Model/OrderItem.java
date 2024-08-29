@@ -35,4 +35,16 @@ public class OrderItem {
     @NotNull
     @Column(name = "price")
     private double price;
+
+    @Override
+    public String toString() {
+        return "OrderItem{" +
+                "id=" + id +
+                ", orderId=" + (order != null ? order.getId() : "null") +
+                ", bookId=" + (book != null ? book.getId() : "null") +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
+    }
+
 }
