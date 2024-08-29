@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Data
@@ -57,6 +58,9 @@ public class Book {
 
     @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
     private WishlistItems wishlistItems;
+
+    @OneToMany(mappedBy = "book",cascade = CascadeType.ALL)
+    private List<Feedback> feedbackList;
 
     public Book(String name, String description, Double price, Integer stock, String author, String category, LocalDateTime created_at, LocalDateTime updated_at) {
         this.name = name;

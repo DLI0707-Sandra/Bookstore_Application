@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -46,4 +47,7 @@ public class Users {
 
     @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
     private Wishlist wishlist;
+
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private List<Feedback> feedbackList;
 }
