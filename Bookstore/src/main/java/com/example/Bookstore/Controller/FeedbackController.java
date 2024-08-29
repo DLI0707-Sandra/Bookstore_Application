@@ -15,27 +15,16 @@ import java.util.Optional;
 public class FeedbackController {
     @Autowired
     FeedbackService feedbackService;
+    
+    @GetMapping("/get/feedback/{productId}")
+    public List<Feedback>getFeedbackByProductId(@PathVariable("productId") Long productId){
+        return feedbackService.getFeedbackByProductId(productId);
+    }
 
-//    @GetMapping
-//    public List<Feedback>getAllFeedback(){
-//        return feedbackService.getAllFeedback();
-//    }
-//    @GetMapping("/get/feedback/{productId}")
-//    public List<Feedback>getFeedbackByProductId(@PathVariable("productId") Long productId){
-//        return feedbackService.getFeedbackByProductId(productId);
-//    }
-//    @GetMapping("/{id}")
-//    public Feedback getFeedbackById(Long id){
-//        return feedbackService.getFeedbackById(id);
-//    }
-//    @PostMapping("/add/feedback/{product_id}")
-//    public String addFeedback(@PathVariable Long product_id, @RequestBody FeedbackDTO feedbackDTO) {
-//        return feedbackService.addFeedback(product_id,feedbackDTO);
-//    }
+    @PostMapping("/add/feedback/{product_id}")
+    public String addFeedback(@PathVariable Long product_id, @RequestBody FeedbackDTO feedbackDTO) {
+        return feedbackService.addFeedback(product_id,feedbackDTO);
+    }
 
-//    @DeleteMapping("/{id}")
-//    public String deleteFeedbackById(@PathVariable Long id){
-//        return feedbackService.deleteFeedbackById(id);
-//    }
 
 }
