@@ -15,5 +15,4 @@ public class BookstoreApplication {
 		SpringApplication.run(BookstoreApplication.class, args);
 		log.info("info level");
 	}
-
 }

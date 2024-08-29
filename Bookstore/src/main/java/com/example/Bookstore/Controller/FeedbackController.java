@@ -1,6 +1,8 @@
 package com.example.Bookstore.Controller;
 
+import com.example.Bookstore.Model.Book;
 import com.example.Bookstore.Model.Feedback;
+import com.example.Bookstore.Model.FeedbackDTO;
 import com.example.Bookstore.Service.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,30 +11,31 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/feedback")
+@RequestMapping("/bookstore_user")
 public class FeedbackController {
     @Autowired
     FeedbackService feedbackService;
-    @GetMapping
-    public List<Feedback>getAllFeedback(){
-        return feedbackService.getAllFeedback();
-    }
-    @GetMapping("/product/{productId}")
-    public Optional<Feedback> getFeedbackByProductId(Long productId){
-        return feedbackService.getFeedbackByProductId(productId);
-    }
-    @GetMapping("/{id}")
-    public Feedback getFeedbackById(Long id){
-        return feedbackService.getFeedbackById(id);
-    }
-    @PostMapping("/feedback/{bookId}")
-    public Feedback addFeedback(@PathVariable Long bookId, @RequestBody Feedback feedback) {
-        feedback.setProductId(bookId);
-        return feedbackService.addFeedback(feedback);
-    }
-    @DeleteMapping("/{id}")
-    public String deleteFeedbackById(@PathVariable Long id){
-        return feedbackService.deleteFeedbackById(id);
-    }
+
+//    @GetMapping
+//    public List<Feedback>getAllFeedback(){
+//        return feedbackService.getAllFeedback();
+//    }
+//    @GetMapping("/get/feedback/{productId}")
+//    public List<Feedback>getFeedbackByProductId(@PathVariable("productId") Long productId){
+//        return feedbackService.getFeedbackByProductId(productId);
+//    }
+//    @GetMapping("/{id}")
+//    public Feedback getFeedbackById(Long id){
+//        return feedbackService.getFeedbackById(id);
+//    }
+//    @PostMapping("/add/feedback/{product_id}")
+//    public String addFeedback(@PathVariable Long product_id, @RequestBody FeedbackDTO feedbackDTO) {
+//        return feedbackService.addFeedback(product_id,feedbackDTO);
+//    }
+
+//    @DeleteMapping("/{id}")
+//    public String deleteFeedbackById(@PathVariable Long id){
+//        return feedbackService.deleteFeedbackById(id);
+//    }
 
 }
