@@ -1,8 +1,7 @@
 package com.example.Bookstore.Controller;
 
-import com.example.Bookstore.Model.Book;
 import com.example.Bookstore.Model.Feedback;
-import com.example.Bookstore.Model.FeedbackDTO;
+import com.example.Bookstore.DTO.FeedbackDTO;
 import com.example.Bookstore.Service.FeedbackService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/bookstore_user")

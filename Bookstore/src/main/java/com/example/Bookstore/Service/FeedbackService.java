@@ -1,11 +1,10 @@
 package com.example.Bookstore.Service;
 
 import com.example.Bookstore.Model.Feedback;
-import com.example.Bookstore.Model.FeedbackDTO;
+import com.example.Bookstore.DTO.FeedbackDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Service

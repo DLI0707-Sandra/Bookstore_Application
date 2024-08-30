@@ -4,18 +4,16 @@ import com.example.Bookstore.Exception.ProductNotFoundException;
 import com.example.Bookstore.Exception.UserNotFoundException;
 import com.example.Bookstore.Model.Book;
 import com.example.Bookstore.Model.Feedback;
-import com.example.Bookstore.Model.FeedbackDTO;
+import com.example.Bookstore.DTO.FeedbackDTO;
 import com.example.Bookstore.Model.Users;
 import com.example.Bookstore.Repository.BookRepository;
 import com.example.Bookstore.Repository.FeedbackRepository;
 import com.example.Bookstore.Repository.UsersRepo;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class FeedbackServiceImplementation implements FeedbackService{
