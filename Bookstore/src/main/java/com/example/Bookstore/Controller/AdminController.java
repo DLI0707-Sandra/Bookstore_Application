@@ -29,32 +29,10 @@ public class AdminController {
     @Autowired
     OrderRepository orderRepository;
 
-    @GetMapping("/get/order")
-    public List<Order> getOrders()
-    {
-        return orderRepository.findAll();
-    }
-
-    @PostMapping(value = "/add/book")
-    public Book addBook(@RequestBody Book book) {
-        return bookService.addBook(book);
-    }
-
-    @PutMapping("/update/book/{bookId}")
-    public Book updateBook(@PathVariable Long product_id, @RequestBody Book book) {
-        return bookService.updateBook(product_id, book);
-    }
-
-    @DeleteMapping("/delete/book/{bookId}")
-    public String deleteBook(@PathVariable Long product_id) {
-
-        return bookService.deleteBook(product_id);
-    }
 
 
     @PostMapping("/registration")
     public Admin createAdmin(@RequestBody Admin admin) {
-
         return adminService.createAdmin(admin);
     }
 
@@ -62,6 +40,30 @@ public class AdminController {
     public String createAdmin(@RequestBody AdminLoginDTO admin) {
         return adminService.loginAdmin(admin);
     }
+
+
+    @PostMapping(value = "/add/book")
+    public Book addBook(@RequestBody Book book) {
+        return bookService.addBook(book);
+    }
+
+    @PutMapping("/update/book/{bookId}")
+    public Book updateBook(@PathVariable("bookId")Long product_id, @RequestBody Book book) {
+        return bookService.updateBook(product_id, book);
+    }
+
+    @DeleteMapping("/delete/book/{bookId}")
+    public String deleteBook(@PathVariable("bookId") Long product_id) {
+
+        return bookService.deleteBook(product_id);
+    }
+
+    @GetMapping("/get/order")
+    public List<Order> getOrders()
+    {
+        return orderRepository.findAll();
+    }
+
 }
 
 

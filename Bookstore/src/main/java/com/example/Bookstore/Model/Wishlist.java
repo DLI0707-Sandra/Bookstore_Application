@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="wishlist_item")
+@Table(name="wishlist")
 public class Wishlist {
 
     @Id

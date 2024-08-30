@@ -18,15 +18,15 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableWebSecurity
 public class SecurityConfig {
 
-//    @Bean
-//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//        http
-//                .csrf(AbstractHttpConfigurer::disable) // Disable CSRF protection
-//                .authorizeHttpRequests(authorize -> authorize
-//                        .anyRequest().permitAll() // Allow all requests without authentication
-//                );
-//        return http.build();
-//    }
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(AbstractHttpConfigurer::disable) // Disable CSRF protection
+                .authorizeHttpRequests(authorize -> authorize
+                        .anyRequest().permitAll() // Allow all requests without authentication
+                );
+        return http.build();
+    }
 
     public void configure(HttpSecurity http) throws Exception {
         http
