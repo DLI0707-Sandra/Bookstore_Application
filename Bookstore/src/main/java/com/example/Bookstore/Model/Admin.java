@@ -19,7 +19,7 @@ public class Admin {
 
         @NotNull
         @Column(name="username", unique=true)
-        @Pattern(regexp = "^[a-zA-Z0-9]{5,15}$", message = "Username must be alphanumeric")
+        @Pattern(regexp = "^[a-zA-Z0-9]{5,15}$", message = "Username must be alphanumeric and between 5 to 15 characters")
         private String username;
 
         @NotNull
@@ -35,13 +35,5 @@ public class Admin {
         private LocalDateTime created_at;
 
 
-//        @NotNull
-//        @Pattern(regexp = "^[a-zA-Z0-9]{5,15}$", message = "Username must be alpha
-//
-//
-//        @NotNull
-//        @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=]).{8,20}$", message = "Password must be 8-20 characters long, contain at least one digit, one letter, and one special character")
-//        @Column(name="password")
-//
     }
 
