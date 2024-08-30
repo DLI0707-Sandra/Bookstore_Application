@@ -58,4 +58,9 @@ public class FeedbackServiceImplementation implements FeedbackService{
         return feedbackRepository.findByBookId(productId);
     }
 
+    @Override
+    public List<Feedback> getAllFeedback() {
+        return feedbackRepository.findAll();
+    }
+
 }

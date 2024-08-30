@@ -14,4 +14,5 @@ public interface FeedbackService {
 
      List<Feedback> getFeedbackByProductId(Long productId);
 
+     List<Feedback> getAllFeedback();
 }

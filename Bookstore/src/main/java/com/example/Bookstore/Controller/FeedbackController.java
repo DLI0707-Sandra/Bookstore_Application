@@ -29,5 +29,10 @@ public class FeedbackController {
         return feedbackService.addFeedback(product_id,feedbackDTO);
     }
 
+    @GetMapping("/get/feedback")
+    public List<Feedback> getAllFeedback(){
+        return feedbackService.getAllFeedback();
+    }
+
 
 }
