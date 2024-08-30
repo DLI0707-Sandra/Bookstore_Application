@@ -34,7 +34,7 @@ public class CustomerDetailsController {
        return customerDetailsService.addCustomer(customerDetails);
     }
 
-    @PostMapping("/updatecustomerbyid")
+    @PutMapping("/updatecustomerbyid/{id}")
     public String updateingCustomerById(@PathVariable("id")Long id,@RequestBody CustomerDetails customerDetails){
         return customerDetailsService.updateCustomerById(id, customerDetails);
     }

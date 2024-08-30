@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderItemController {
 
     @Autowired
-    OrderItemRepository orderItemRepository;
+    OrderItemRepository orderItemRepository;// OrderItemRepository object is created and autowired
 
     @Autowired
-    BookRepository bookRepository;
+    BookRepository bookRepository;// BookRepository object is created and autowired
 
     @Autowired
-    OrderRepository orderRepository;
+    OrderRepository orderRepository;// OrderRepository object is created and autowired
 
     @Autowired
-    UsersRepo usersRepo;
+    UsersRepo usersRepo;// UsersRepo object is created and autowired
 }
