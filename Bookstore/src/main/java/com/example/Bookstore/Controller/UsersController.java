@@ -9,11 +9,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/bookstore_user")
 public class UsersController {
 
     @Autowired
@@ -22,20 +23,21 @@ public class UsersController {
     public List<Users> allUser(){
         return usersService.allUser();
     }
-    @GetMapping("/login")
-    public ResponseEntity<?> userLogin(@RequestBody UsersDto loginDTO){
-        try{
-          //  System.out.println("user available");
-            return ResponseEntity.ok( usersService.loginUser(loginDTO));
 
-        } catch (Exception exception){
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or Password");
-        }
+    @PostMapping("/login")
+    public ResponseEntity<?> loginUser(@RequestBody UsersDto  loginDTO){
+        String token= usersService.loginUser(loginDTO);
+        return ResponseEntity.ok(Collections.singletonMap("token",token));
     }
 
-    @GetMapping
-    public Users getBytoken(@RequestHeader String token){
-        return usersService.getByToken(token);
+    @PostMapping("/verification/{token}")
+    public ResponseEntity<?> userVerification(@PathVariable String token) {
+        boolean isVerified = usersService.verifyToken(token);
+        if (isVerified) {
+            return ResponseEntity.ok("User account verified successfully!");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid or expired token.");
+        }
     }
 
     @PostMapping("/registration")
@@ -43,8 +45,4 @@ public class UsersController {
        return usersService.registration(users);
     }
 
-//    @GetMapping("/login")
-//    public String login(@RequestBody UsersDto usersDto){
-//        return usersService.login(usersDto);
-//    }
 }

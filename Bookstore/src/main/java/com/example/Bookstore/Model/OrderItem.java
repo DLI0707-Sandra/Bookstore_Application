@@ -12,7 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order_items") // order_items table is created
+@Table(name = "order_items",uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"order_id", "book_id"})}) // order_items table is created
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class OrderItem {
 
@@ -24,7 +25,7 @@ public class OrderItem {
     @JoinColumn(name = "order_id")
     private Order order;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="book_id")
     private Book book;
 

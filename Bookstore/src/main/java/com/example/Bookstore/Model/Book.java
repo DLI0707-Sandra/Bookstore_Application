@@ -20,7 +20,6 @@ import java.util.List;
 @Entity
 @Table(name="books")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-
 public class Book {
 
     @Id
@@ -57,8 +56,8 @@ public class Book {
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private List<CartItem> cartItem;
 
-    @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
-    private OrderItem orderItem;
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    private List<OrderItem> orderItems;
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private List<WishlistItems> wishlistItems;

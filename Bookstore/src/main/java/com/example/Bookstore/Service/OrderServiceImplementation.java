@@ -1,5 +1,6 @@
 package com.example.Bookstore.Service;
 
+import com.example.Bookstore.Exception.UserNotFoundException;
 import com.example.Bookstore.Model.*;
 import com.example.Bookstore.Repository.*;
 import jakarta.transaction.Transactional;
@@ -33,8 +34,10 @@ public class OrderServiceImplementation implements OrderService{
 
     @Transactional // This annotation is used to perform a transaction on the method
     @Override
-    public void createOrder(Long userId) { // createOrder method with userId as parameter
+    public String createOrder(Long userId) { // createOrder method with userId as parameter
         Users user=usersRepo.findById(userId).orElse(null);
+        if (user==null)
+            throw new UserNotFoundException("User not found!");
         Cart cart=cartRepository.findByUserId(userId).orElse(null);
         if(cart!=null)
         {
@@ -42,6 +45,8 @@ public class OrderServiceImplementation implements OrderService{
             for (CartItem cartItem : cart.getCartItems()) {
                 OrderItem orderItem = new OrderItem();
                 orderItem.setBook(cartItem.getBook());
+                cartItem.getBook().setStock(cartItem.getBook().getStock()-cartItem.getQuantity());
+                bookRepository.save(cartItem.getBook());
                 orderItem.setQuantity(cartItem.getQuantity());
                 orderItem.setPrice(cartItem.getBook().getPrice());
                 orderItems.add(orderItem);
@@ -74,8 +79,12 @@ public class OrderServiceImplementation implements OrderService{
             cart.setCartItems(new ArrayList<>());
             cartRepository.save(cart);
             orderRepository.save(order);
+            return "Order placed sucessfully!";
         }
-
+        else
+        {
+            return "Order failed!";
+        }
     }
 
 }

@@ -4,7 +4,9 @@ import com.example.Bookstore.Model.Book;
 import com.example.Bookstore.Model.Feedback;
 import com.example.Bookstore.Model.FeedbackDTO;
 import com.example.Bookstore.Service.FeedbackService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/bookstore_user")
+@Validated
 public class FeedbackController {
     @Autowired
     FeedbackService feedbackService;
@@ -22,7 +25,7 @@ public class FeedbackController {
     }
 
     @PostMapping("/add/feedback/{product_id}")
-    public String addFeedback(@PathVariable Long product_id, @RequestBody FeedbackDTO feedbackDTO) {
+    public String addFeedback(@PathVariable Long product_id, @Valid @RequestBody FeedbackDTO feedbackDTO) {
         return feedbackService.addFeedback(product_id,feedbackDTO);
     }
 
