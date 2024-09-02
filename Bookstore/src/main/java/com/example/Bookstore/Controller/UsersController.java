@@ -4,6 +4,7 @@ import com.example.Bookstore.DTO.UsersDto;
 import com.example.Bookstore.Model.Users;
 import com.example.Bookstore.Service.UsersService;
 import com.example.Bookstore.Service.UsersServiceImplementation;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,7 +42,7 @@ public class UsersController {
     }
 
     @PostMapping("/registration")
-    public String registration(@RequestBody Users users){
+    public String registration(@Valid @RequestBody Users users){
        return usersService.registration(users);
     }
 

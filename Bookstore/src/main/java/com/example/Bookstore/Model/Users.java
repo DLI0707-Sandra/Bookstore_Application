@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,10 +31,12 @@ public class Users {
     @Column(name="userName")
     private String userName;
 
+    @Pattern(regexp = "^[A-Za-z0-9_]+@[A-Za-z]+\\.[A-Za-z]{2,}$", message = "Invalid email address")
     @Column(name="email")
     private String email;
 
     @NotNull
+    @Size(min = 6, message = "Password length should be greater than 6!")
     @Column(name="password")
     private String password;
 

@@ -12,5 +12,5 @@ public interface CartItemService {
 
     String deleteItem(Long id);
 
-    List<CartItem> getAll();
+    List<CartItem> getAll(Long cartId);
 }

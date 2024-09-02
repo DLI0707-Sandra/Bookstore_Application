@@ -41,9 +41,9 @@ public class CartItemController {
         return cartItemService.deleteItem(cartitem_id);
     }
 
-    @GetMapping("/get_cart_items")
-    public List<CartItem> getCartItems()
+    @GetMapping("/get_cart_items/{cartId}")
+    public List<CartItem> getCartItems(@PathVariable("cartId") Long cartId)
     {
-        return cartItemService.getAll();
+        return cartItemService.getAll(cartId);
     }
 }
