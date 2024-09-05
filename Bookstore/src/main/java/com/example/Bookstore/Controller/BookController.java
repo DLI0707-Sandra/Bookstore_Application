@@ -21,6 +21,24 @@ public class BookController {
         return bookService.getAll();
     }
 
+    @GetMapping("get/books/low_to_high")
+    public List<Book> getByPriceLowtoHigh()
+    {
+        return bookService.getByPriceLowtoHigh();
+    }
+
+    @GetMapping("get/books/high_to_low")
+    public List<Book> getByPriceHightoLow()
+    {
+        return bookService.getByPriceHightoLow();
+    }
+
+    @GetMapping("get/books/newest")
+    public List<Book> getByNewest()
+    {
+        return bookService.getByNewest();
+    }
+
     @PostMapping
     public Book addBook(@RequestBody Book book)
     {

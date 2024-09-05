@@ -12,4 +12,10 @@ public interface BookService {
     Book updateBook(Long productId, Book book);
 
     String deleteBook(Long productId);
+
+    List<Book> getByPriceLowtoHigh();
+
+    List<Book> getByPriceHightoLow();
+
+    List<Book> getByNewest();
 }

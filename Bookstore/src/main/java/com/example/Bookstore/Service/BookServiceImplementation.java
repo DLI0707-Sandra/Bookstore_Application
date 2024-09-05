@@ -5,6 +5,7 @@ import com.example.Bookstore.Repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -51,5 +52,21 @@ public class BookServiceImplementation implements BookService{
             bookRepository.deleteById(productId);
             return "Deleted!";
         }
+    }
+
+    @Override
+    public List<Book> getByPriceLowtoHigh() {
+        return
+                bookRepository.displayLowtoHigh();
+    }
+
+    @Override
+    public List<Book> getByPriceHightoLow() {
+        return bookRepository.displayHightoLow();
+    }
+
+    @Override
+    public List<Book> getByNewest() {
+        return bookRepository.displayNewest();
     }
 }
